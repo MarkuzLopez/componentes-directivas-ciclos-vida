@@ -1,0 +1,23 @@
+<div [ngClass]="alerta" class="alert" role="alert">
+  A simple danger alert—check it out!
+</div>
+
+<button class="btn btn-success" (click)=" alerta = 'alert-success'" > Success </button>
+<button class="btn btn-info" (click)=" alerta = 'alert-info'" > Info </button>
+<br><br>
+
+<!-- <h3 [ngClass]="{'text-danger': false}" >
+  Hola Perros :D 
+</h3> -->
+<!-- Si es true propiedades.damger se pinta de rojo si no, de color azul -->
+<h3 [ngClass]="{'text-danger': propedades.danger, 'text-info': !propedades.danger}" >
+  Hola Perros :D
+</h3>
+
+<button class="btn" [ngClass]="{'btn-danger': propedades.danger,  'btn-info': !propedades.danger}" (click)="propedades.danger = !propedades.danger" >Cambiar</button>
+<br><br>
+<h3>Procesos Asíncrono</h3>
+<button type="button" class="btn btn-primary" (click)="ejecutar()" [disabled]="loading" >
+  <i [ngClass]="{'fa-save':!loading, 'fa-refresh fa-spin':loading}" class="fa" ></i>
+  Guardar Cambios
+</button>
